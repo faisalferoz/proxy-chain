@@ -8,7 +8,7 @@ import { RequestError } from './server';
  */
 export default class HandlerBase extends EventEmitter {
     constructor({
-        server, id, srcRequest, srcHead, srcResponse, trgParsed, upstreamProxyUrlParsed, proxyHeaders
+        server, id, srcRequest, srcHead, srcResponse, trgParsed, upstreamProxyUrlParsed, proxyHeaders,
     }) {
         super();
 

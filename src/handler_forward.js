@@ -27,7 +27,7 @@ export default class HandlerForward extends HandlerBase {
 
         const tlsSocket = tls.connect({
             host: this.upstreamProxyUrlParsed.hostname,
-            port: this.upstreamProxyUrlParsed.port
+            port: this.upstreamProxyUrlParsed.port,
         });
 
         const headers = { ...this.proxyHeaders };
@@ -51,7 +51,7 @@ export default class HandlerForward extends HandlerBase {
         proxyResponsePromise.then((statusCode) => {
             this.forwardRequest({
                 socket: statusCode === 200 && tlsSocket,
-                path: requestUrl.path
+                path: requestUrl.path,
             });
         });
     }

@@ -132,7 +132,7 @@ describe('utils.anonymizeProxy', function () {
             })
             .then(() => {
                 return new Promise((resolve, reject) => {
-                    anonymizeProxy('http://whatever:4567', (err, result) => {
+                    anonymizeProxy('http://whatever:4567', null, (err, result) => {
                         if (err) return reject(err);
                         resolve(result);
                     });
@@ -151,7 +151,7 @@ describe('utils.anonymizeProxy', function () {
                 return Promise.all([
                     anonymizeProxy(`http://${proxyAuth.username}:${proxyAuth.password}@127.0.0.1:${proxyPort}`),
                     new Promise((resolve, reject) => {
-                        anonymizeProxy(`http://${proxyAuth.username}:${proxyAuth.password}@127.0.0.1:${proxyPort}`, (err, result) => {
+                        anonymizeProxy(`http://${proxyAuth.username}:${proxyAuth.password}@127.0.0.1:${proxyPort}`, null, (err, result) => {
                             if (err) return reject(err);
                             resolve(result);
                         });
